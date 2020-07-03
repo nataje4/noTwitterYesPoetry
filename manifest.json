@@ -1,0 +1,28 @@
+{
+    "name": "No to Twitter",
+    "version": "1.0",
+    "description": "Are you sure you actually want to go on Twitter right now?",
+    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "manifest_version": 2, 
+    "page_action": {
+      "default_popup": "popup.html",      
+      "default_icon": {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+      }
+    },
+    "icons": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    }, 
+    "content_scripts": [
+     {
+       "matches": ["https://*.twitter.com/*"],
+       "js": ["alert.js"]
+     }
+   ]
+  }
